@@ -21,3 +21,11 @@ EXPOSE 4000
 
 #Command to start the Docker container for the Node.js application
 CMD ["npm", "run", "dev"]
+# [START cloudbuild_quickstart_build]npm build
+
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs1:tag1', '.' ]
+images:
+- 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs1:tag1'
+# [END cloudbuild_quickstart_build]
