@@ -23,4 +23,4 @@ EXPOSE 4000
 CMD ["npm", "run", "dev"]
 # [START cloudbuild_quickstart_build]npm build
 
- $ docker build -t node_image
+ ENTRYPOINT ["dotnet", "nodereactapp.dll"]
