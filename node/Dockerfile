@@ -23,7 +23,7 @@ EXPOSE 4000
 CMD ["npm", "run", "dev"]
 # [START cloudbuild_quickstart_build]npm build
 
-steps:
+#steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/nodejs1:tag1', '.' ]
 images:
