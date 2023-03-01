@@ -1,0 +1,11 @@
+ steps:
+  # running docker-compose
+  - name: 'docker/compose:1.26.2'
+    args: ['up', '-d']
+    # [START cloudbuild_quickstart_build]
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/react-node-app/node/MYIMG', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/react-node-app/node/MYIMG']
