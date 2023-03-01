@@ -23,4 +23,4 @@ EXPOSE 4000
 CMD ["npm", "run", "dev"]
 # [START cloudbuild_quickstart_build]npm build
 
- ENTRYPOINT ["dotnet", "nodereactapp.dll"]
+  $ docker build --tag node-jsimg 
