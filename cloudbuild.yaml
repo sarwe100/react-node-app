@@ -5,9 +5,14 @@
     # [START cloudbuild_quickstart_build]
 
 # [START cloudbuild_quickstart_build]
-steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us-west2-docker.pkg.dev/$PROJECT_ID/node-react-app-image:tag1', '.' ]
-images:
-- 'us-west2-docker.pkg.dev/$PROJECT_ID/node-react-apps-image:tag1'
-# [END cloudbuild_quickstart_build]
+ # Docker Build
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 
+         'gcr.io/node-react-32024/sarwe100/react-node-app/myimage:$SHORT_SHA', '.']
+  # [END cloudbuild_python_image_yaml]
+
+  # [START cloudbuild_python_push_yaml]
+  # Docker push to Google Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push',  'gcr.io/node-react-32024/sarwe100/react-node-app/myimage:$SHORT_SHA']
+  # [END cloudbuild_python_push_yaml]
