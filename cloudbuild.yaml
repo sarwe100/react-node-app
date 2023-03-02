@@ -1,6 +1,6 @@
-# [START cloudbuild_quickstart_build]
+  # [START cloudbuild_quickstart_build]
 
- # Docker Build
+  # Docker Build
  
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
