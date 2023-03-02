@@ -4,5 +4,5 @@ steps:
   args: ['up', '-d']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/node-react-32024/react-node-app/node/myimage:$SHORT_SHA', './node']
-  images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  
 
