@@ -1,7 +1,8 @@
- steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/node-react-32024/react-node-app/react-app', '.']
-
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/node-react-32024/react-node-app/react-app'] 
+#cloudbuild.yaml
+steps:
+- name: 'docker/compose:1.19.0'
+  args: ['up', '-d']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/node-react-32024/react-node-app/node/myimage:$SHORT_SHA', './node']
+  images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 

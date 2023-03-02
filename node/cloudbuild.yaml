@@ -1,7 +1,1 @@
- steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/node-react-32024/react-node-app/node/myimage:$SHORT_SHA', './node']
-
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/node-react-32024/react-node-app/node/myimage:$SHORT_SHA', './node'] 
 
