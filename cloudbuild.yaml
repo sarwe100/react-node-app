@@ -1,13 +1,7 @@
-  # [START cloudbuild_python_image_yaml]
-  Steps:
+ steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args:  ['build', '-t', 'gcr.io/node-react-32024/react-node-app/react/myimage:$SHORT_SHA', '.']
-  # [END cloudbuild_python_image_yaml]
+    args: ['build', '-t', 'gcr.io/node-react-32024/react-node-app/node', '.']
 
-  # [START cloudbuild_python_push_yaml]
-  # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args:  ['push',  'gcr.io/node-react-32024/react-node-app/react/myimage:$SHORT_SHA']
-  # [END cloudbuild_python_push_yaml]
-  
-  # [START cloudbuild_python_deploy_yaml]
+    args: ['push', 'gcr.io/node-react-32024/react-node-app/node'] 
+
