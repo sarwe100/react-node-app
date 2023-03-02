@@ -1,7 +1,7 @@
     # [START cloudbuild_python_image_yaml]
   # Docker Build
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 
+  - name:'gcr.io/cloud-builders/docker'
+    args:['build', '-t', 
          'gcr.io/node-react-32024/react-node-app/react/myimage:$SHORT_SHA', '.']
   # [END cloudbuild_python_image_yaml]
 
